@@ -1,0 +1,608 @@
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #151A2E;
+    --background-light: #1D2238;
+
+    --text: #F2F0F7;
+    --text-muted: #B7B7C9;
+
+    --purple: #B9A1E8;
+    --blue: #8FC8E8;
+    --green: #91C9B4;
+    --pink: #E5AFCB;
+    --orange: #E8BE91;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   MENU SUPERIOR
+===================================== */
+
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(21, 26, 46, 0.94);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--text);
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--purple);
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--purple);
+}
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   APRESENTAÇÃO INICIAL
+===================================== */
+
+.hero {
+    min-height: 620px;
+    max-width: 1200px;
+
+    margin: auto;
+    padding: 100px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 680px;
+    z-index: 1;
+}
+
+.hero-tag {
+    display: inline-block;
+
+    color: var(--green);
+    background: rgba(145, 201, 180, 0.10);
+
+    padding: 8px 18px;
+    border-radius: 30px;
+
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--purple);
+    display: block;
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 570px;
+    font-size: 17px;
+
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+    display: inline-block;
+
+    padding: 13px 26px;
+
+    background: var(--purple);
+    color: #201B32;
+
+    border-radius: 8px;
+    text-decoration: none;
+
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(185,161,232,0.2);
+}
+
+
+/* Elementos decorativos */
+
+.hero-decoration {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.decoration-circle {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(185,161,232,0.12);
+    border: 1px solid rgba(185,161,232,0.3);
+
+    position: absolute;
+    top: 50px;
+    left: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--purple);
+    font-size: 65px;
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+.decoration-code {
+    position: absolute;
+    right: 0;
+    top: 20px;
+
+    color: var(--green);
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.decoration-star {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+
+    font-size: 65px;
+    color: var(--pink);
+}
+
+
+/* =====================================
+   SEÇÕES
+===================================== */
+
+.content-section {
+    padding: 100px 30px;
+}
+
+.section-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 70px;
+}
+
+.section-number {
+    display: inline-block;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    font-weight: bold;
+    margin-bottom: 18px;
+
+    color: var(--purple);
+}
+
+.section-text h2 {
+    font-size: 38px;
+    margin-bottom: 22px;
+}
+
+.section-text p {
+    color: var(--text-muted);
+    font-size: 16px;
+
+    margin-bottom: 16px;
+}
+
+
+/* =====================================
+   CORES INDIVIDUAIS DAS SEÇÕES
+===================================== */
+
+.sobre {
+    background: #20243A;
+}
+
+.historia {
+    background: #29243D;
+}
+
+.personagens {
+    background: #24343D;
+}
+
+.animacoes {
+    background: #35283D;
+}
+
+.jogos {
+    background: #252B40;
+}
+
+.historia .section-number {
+    color: var(--pink);
+}
+
+.personagens .section-number {
+    color: var(--green);
+}
+
+.animacoes .section-number {
+    color: #D7A9E9;
+}
+
+.jogos .section-number {
+    color: var(--orange);
+}
+
+
+/* =====================================
+   ESPAÇO DAS IMAGENS PNG
+===================================== */
+
+.image-placeholder {
+    width: 100%;
+    min-height: 320px;
+
+    border: 2px dashed rgba(255,255,255,0.18);
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.025);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    padding: 15px;
+
+    z-index: 1;
+}
+
+.image-placeholder span {
+    color: rgba(255,255,255,0.35);
+    font-size: 13px;
+}
+
+
+/* =====================================
+   ÁREA DO JOGO
+===================================== */
+
+.game-container {
+    max-width: 1100px;
+    margin: 100px auto 0;
+
+    text-align: center;
+}
+
+.game-container h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.game-container p {
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+.game-frame {
+    width: 75%;
+    margin: auto;
+
+    aspect-ratio: 16 / 9;
+
+    background: #101422;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.game-frame iframe {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+.footer {
+    background: #111525;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer h3 {
+    color: var(--purple);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.copyright {
+    color: #777C91;
+    font-size: 12px;
+}
+
+
+/* =====================================
+   ANIMAÇÕES DE ENTRADA
+===================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 850px) {
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero-decoration {
+        opacity: 0.5;
+        position: absolute;
+        right: -80px;
+    }
+
+    .section-container {
+        gap: 35px;
+    }
+
+    .section-text h2 {
+        font-size: 30px;
+    }
+
+    .image-placeholder {
+        min-height: 260px;
+    }
+
+    .game-frame {
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        gap: 0;
+
+        background: #1B2035;
+        padding: 15px 25px;
+
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 12px 0;
+    }
+
+    .hero {
+        padding: 90px 25px;
+        min-height: 550px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-decoration {
+        right: -150px;
+        opacity: 0.25;
+    }
+
+    .content-section {
+        padding: 75px 25px;
+    }
+
+    .section-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .section-text h2 {
+        font-size: 30px;
+    }
+
+    .image-placeholder {
+        min-height: 280px;
+    }
+
+    .game-container {
+        margin-top: 65px;
+    }
+
+    .game-container h2 {
+        font-size: 25px;
+    }
+
+    .game-frame {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
+    .footer h3 {
+        font-size: 17px;
+    }
+
+}
+
+
+/* Respeita usuários que preferem menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+}
